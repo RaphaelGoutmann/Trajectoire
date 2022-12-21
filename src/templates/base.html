@@ -37,6 +37,9 @@
 
                 <li><a href="{% url 'contribute' %}">Contribuer</a></li>
 
+                {% if user.is_superuser %}
+                <li><a href="/admin">Interface d'administration</a></li>
+                {% endif %}
             </ul>
 
         </nav>
