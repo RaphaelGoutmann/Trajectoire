@@ -6,18 +6,20 @@ from .models import *
 class ArticleDetailView(DetailView):
     model = Article
     template_name = 'articles/article_detail.html'
-    context_object_name = "article"
+    context_object_name = 'article'
 
 class CategoryDetailView(DetailView):
     model = Category
     template_name = 'articles/category_detail.html'
-    context_object_name = "category"
+    context_object_name = 'category'
 
-def HomeView(request):
-    return render(request, 'articles/home.html')
+class HomeView(ListView):
+    model = Article
+    template_name = 'articles/home.html'
+    context_object_name = 'articles'
 
 def ContributeView(request):
-    return render(request, "articles/contribute.html")
+    return render(request, 'articles/contribute.html')
 
 class SearchView(ListView):
     model = Article

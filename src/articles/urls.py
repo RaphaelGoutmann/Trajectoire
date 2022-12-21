@@ -7,7 +7,7 @@ from trajectoire import settings
 from .views import *
 
 urlpatterns = [
-    path('', HomeView, name="home"),
+    path('', HomeView.as_view(), name="home"),
     path('contribute', ContributeView, name="contribute"),
 
     path('search', SearchView.as_view(), name="search"),

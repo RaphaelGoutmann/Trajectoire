@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block title %}
     <title>Accueil - Trajectoire</title>
@@ -7,64 +6,96 @@
 
 {% block content %}
 
-    <div class="container-lg">
+    <div class="container-xxl">
         
-        <div class="block gap-4">
-            <div>
-                <h1 class="title pb-1">Lorem</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
-            </div>
-            <div>
-                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
-            </div>
-        </div>
+        <div class="small text-light uppercase">Accueil</div>
+        <h1 class="font-light uppercase">Trajectoire</h1>
 
-        <div class="block block-reverse gap-4">
-            <div>
-                <h1 class="title pb-1">Lorem</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
-            </div>
-            <div>
-                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
-            </div>
-        </div>
+        <hr>
 
-        <div class="block gap-4">
-            <div>
-                <h1 class="title pb-1">Lorem</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
-            </div>
-            <div>
-                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
-            </div>
-        </div>
+        <div class="grid">
+            
+            <div class="row">
 
-    </div>
+                <div class="xs:col-12 xs:order-1 md:col-6 md:order-2">
+                    
+                    {% for article in articles|slice:"0:3" %}
 
-    <div class="container-md">
-
-        <div class="row gap-1">
-
-            {% for category in categories %}
-
-            <div class="col-12 md:col-6">
-
-                <a href="{% url 'category' slug=category.slug %}">
-                    <div style="height: 600px" class="hover:shadow text-center card mb-0 card-column card-border justify-flex-start">
-                        <img height="auto" class="card__thumbnail" src="{{ category.thumbnail.url }}" alt="">
+                    <div class="card card-column">
+                        <a href="{% url 'article' slug=article.slug %}">
+                            <img class="card__thumbnail" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                        </a>
                         <div class="card__body">
-                            <h3 class="card__title">{{ category.name }}</h3>
-                            <p  class="card__text">{{ category.description }}</p>
+                            <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                            <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
                         </div>
                     </div>
-                </a>
 
-            </div>
+                    {% endfor %}
 
-            {% endfor %}
+                </div>
+
+
+                <div class="xs:col-12 xs:order-2 md:col-3 md:order-1">
+
+                    {% for article in articles|slice:"3:6" %}
+
+                        <div class="card card-column">
+                            <a href="{% url 'article' slug=article.slug %}">
+                                <img class="card__thumbnail" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                            </a>
+                            <div class="card__body">
+                                <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                                <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="xs:col-12 xs:order-3 md:col-3 md:order-3">
+
+                    {% for article in articles|slice:"6:9" %}
+
+                        <div class="card card-column">
+                            <div class="card__body">
+                                <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                                <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>            
 
         </div>
 
+        <hr>
+
+        <div class="row">
+
+            <div class="xs:col-12 md:col-9">
+
+                {% for article in articles|slice:"9:" %}
+
+                    <div class="card card-row">
+                        <a href="{% url 'article' slug=article.slug %}">
+                            <img width="600px" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                        </a>  
+                        <div class="card__body">
+                            <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                            <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}
