@@ -1,0 +1,25 @@
+/* style.css */
+
+// general
+@import "reset";
+@import "variables";
+@import "base";
+@import "utilities";
+
+// layout
+@import "layout/header";
+@import "layout/footer";
+@import "layout/article";
+@import "layout/grid";
+@import "layout/container";
+
+// components
+@import "components/card";
+@import "components/button";
+@import "components/title";
+@import "components/form";
+@import "components/dropdown";
+@import "components/alert";
+@import "components/badge";
+@import "components/pagination";
+@import "components/block"

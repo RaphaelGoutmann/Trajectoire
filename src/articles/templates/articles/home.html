@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Accueil - Trajectoire</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-lg">
+        
+        <div class="block gap-4">
+            <div>
+                <h1 class="title pb-1">Lorem</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
+            </div>
+            <div>
+                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
+            </div>
+        </div>
+
+        <div class="block block-reverse gap-4">
+            <div>
+                <h1 class="title pb-1">Lorem</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
+            </div>
+            <div>
+                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
+            </div>
+        </div>
+
+        <div class="block gap-4">
+            <div>
+                <h1 class="title pb-1">Lorem</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo accusamus sint repudiandae tempora fugiat similique iusto dolores eveniet .</p>
+            </div>
+            <div>
+                <img src="https://absurd.design/_nuxt/img/db4f17a.jpg" alt="" srcset="">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-md">
+
+        <div class="row gap-1">
+
+            {% for category in categories %}
+
+            <div class="col-12 md:col-6">
+
+                <a href="{% url 'category' slug=category.slug %}">
+                    <div style="height: 600px" class="hover:shadow text-center card mb-0 card-column card-border justify-flex-start">
+                        <img height="auto" class="card__thumbnail" src="{{ category.thumbnail.url }}" alt="">
+                        <div class="card__body">
+                            <h3 class="card__title">{{ category.name }}</h3>
+                            <p  class="card__text">{{ category.description }}</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+{% endblock %}

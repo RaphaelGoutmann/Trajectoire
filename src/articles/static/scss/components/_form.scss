@@ -1,0 +1,57 @@
+/* _form.scss */
+
+form
+{
+    width: 100%;
+
+    * 
+    { 
+        font-size: 1rem !important; 
+    }
+
+    & > *
+    { 
+        margin-bottom: 1.5 * $spacer; 
+    }
+}
+
+label
+{
+    display: block;
+    width: 100%;
+}
+
+input[type=text], 
+input[type=password],
+select,
+textarea,
+div[contenteditable]
+{
+    outline: none !important;
+
+    width: 100%;
+    padding: 1 * $spacer 0;
+    margin: 0.4 * $spacer 0;
+    
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $dark;
+}
+
+textarea,
+div[contenteditable]
+{
+    min-height: 50vh;
+
+    & > * 
+    {  
+        margin-top: 0;
+        margin-bottom: 1 * $spacer; 
+    }
+}
+  
+input[type=submit]
+{
+    @extend .btn;
+    width: 100%;
+}

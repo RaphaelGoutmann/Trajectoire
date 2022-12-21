@@ -1,0 +1,19 @@
+.block
+{
+    height: 75vh;
+    display: flex;
+
+    flex-direction: flex-row;
+    justify-content: center;
+    align-items: center;
+}
+
+.block.block-reverse
+{
+    flex-direction: row-reverse;
+}
+
+.block > *
+{
+    flex: 1;
+}

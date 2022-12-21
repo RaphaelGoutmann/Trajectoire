@@ -1,0 +1,13 @@
+/* _container.scss */
+
+@each $key, $value in $breakpoints
+{
+    .container-#{$key}
+    {
+        width: 100%;
+        max-width: $value;
+        padding: 2 * $spacer;
+
+        margin: 0 auto;
+    }
+}

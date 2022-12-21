@@ -1,0 +1,29 @@
+/* _button.scss */
+
+.btn
+{
+    padding-left:   $button-padding-left;
+    padding-right:  $button-padding-right;
+    padding-top:    $button-padding-top;
+    padding-bottom: $button-padding-bottom;
+
+    border: 1px solid $dark;
+    border-radius: 0;
+
+    font-size: $button-font-size;
+    line-height: $button-line-height;
+    font-weight: $button-font-weight;
+    
+    text-align: center;
+
+    color: $white;
+    background: $dark;
+    
+    cursor: pointer;
+}
+
+.btn.btn-inverted
+{
+    color: $black;
+    background: $white;  
+}

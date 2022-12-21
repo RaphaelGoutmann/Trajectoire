@@ -1,0 +1,172 @@
+/* _base.scss */
+
+*, ::before, ::after
+{
+    box-sizing: border-box;
+}
+
+html, body
+{
+    font-family:    $body-font-family;
+    font-size:      $body-font-size;
+    letter-spacing: $body-letter-spacing;
+    line-height:    $body-line-height;
+    font-weight:    $body-font-weight;
+
+    background: $body-bg;
+    color:      $body-fg;
+}
+
+main 
+{
+    background: $body-bg;
+}
+
+p
+{}
+
+hr
+{
+    border: 0;
+    width: 100%;
+    height: 1px;
+
+    margin: 3 * $spacer 0;
+    background: $light;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6
+{
+    font-family: $title-font-family;
+    font-weight: bold;	
+    line-height: 1.5em;
+}
+
+h1	
+{
+    font-size: $h1-font-size;
+    margin: 0.67em 0 0.67em;
+}
+
+h2	
+{
+    font-size: $h2-font-size;
+    margin: 0.83em 0 ;
+}
+
+h3	
+{
+    font-size: $h3-font-size;
+    margin: 1em 0;
+}
+
+h4	
+{
+    margin-top: $h4-font-size;
+    margin: 1.33em 0;
+}
+
+h5	
+{
+    font-size: $h5-font-size;
+    margin: 1.67em 0;
+}
+
+h6	
+{
+    font-size: $h6-font-size;
+    margin: 2.33em 0;
+}
+
+img
+{
+    max-width: 100%;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+a.underlined
+{
+    border-bottom: .09rem solid $gray;
+}
+
+mark
+{
+    padding: 0 .25em;
+    background: $mark;
+}
+
+blockquote
+{
+    display: block;
+    width: 100%;
+    
+    padding: 0 2 * $spacer;
+
+    color: $blockquote-fg;
+    
+    line-height: $blockquote-line-height;
+    font-size:   $blockquote-font-size;
+    font-weight: $blockquote-font-weight;
+
+    cite
+    {
+        display: block;    
+        width: 100%;
+        
+        margin-top: 1 * $spacer;
+    }
+
+    cite::before
+    {
+        content: "— ";
+    }
+}
+
+b
+{
+    font-weight: bold;
+}
+
+i
+{
+    font-style: italic;
+}
+
+ul
+{
+    display: block;
+    list-style-type: disc;
+
+    padding-left: 2 * $spacer;
+}
+
+ol
+{
+	display: block;
+    list-style-type: decimal;
+
+    padding-left: 2 * $spacer;
+}
+
+li
+{
+    display: list-item;
+}
+
+code
+{
+    background: $light;
+    padding: .1 * $spacer .25 * $spacer;
+    font-family: $code-font-family;
+}

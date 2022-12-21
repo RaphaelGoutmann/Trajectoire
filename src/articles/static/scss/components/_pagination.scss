@@ -1,0 +1,59 @@
+/* _pagination.scss */
+
+.pagination
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.page-item
+{
+    border: $light 1px solid;
+    padding: .5 * $spacer .75 * $spacer;
+    list-style: none;
+
+    transition-duration: .1s;
+
+    z-index: 0;
+
+    cursor: pointer;
+}
+
+.page-item:not(:first-child)
+{
+    margin-left: -1px;
+}
+
+.page-item:hover
+{
+    background: $light;
+}
+
+.page-item:first-child
+{
+    border-radius: 3px 0 0 3px;
+}
+
+.page-item:last-child
+{
+    border-radius: 0 3px 3px 0;
+}
+
+.page-item.active
+{
+    z-index: 1;
+    
+    background:   $dark;
+    border-color: $dark;
+    color: $white;
+}
+
+.page-item.active:hover
+{
+    background: $dark;
+}
+
+.page-link
+{}

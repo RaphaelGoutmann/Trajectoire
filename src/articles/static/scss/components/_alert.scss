@@ -1,0 +1,22 @@
+/* _alert.scss */
+
+.alert
+{
+    padding: 1 * $spacer;
+    border-width: 1px;
+    border-style: solid;
+
+    width:  100%;
+    height: auto;
+}
+
+@each $key, $value in $theme-colors
+{
+    .alert-#{$key}
+    {
+        color: $value;
+        border-color: $value;
+        background: lighten($value, 40%);
+    }
+}
+

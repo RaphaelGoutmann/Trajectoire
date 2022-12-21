@@ -1,0 +1,68 @@
+/* _card.scss */
+
+.card
+{    
+    position: relative; 
+    text-align: left;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    gap: $card-gap;
+
+    transition-duration: .2s;
+
+    &.card-row    { flex-direction: row; }
+    &.card-column { flex-direction: column; }
+
+    &.card-border { border: $light 1px solid; 
+                    padding: 2 * $spacer; }
+
+    .card__body
+    {
+        width: 100%;
+        
+        display: flex;
+        align-items: left;
+        justify-content: center;
+        flex-direction: column;
+        
+        gap: $card-body-gap;  
+    }
+
+    &.card-row .card__thumbnail
+    {
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &.card-column .card__thumbnail
+    {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    .card__title
+    {
+        font-weight: normal;
+        font-size: 1.5 * $body-font-size;
+
+        text-transform: capitalize;
+
+        line-height: 1.5em;
+
+    }
+
+    .card__title a
+    {
+        border-bottom: .09rem solid $gray;
+    }
+
+    .card__body > *
+    {
+        margin: 0;
+        padding: 0;
+    }
+}

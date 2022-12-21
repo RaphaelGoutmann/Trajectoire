@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>{{ category.name }} - Trajectoire</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-xxl">
+        
+        <div class="small text-light uppercase">Accueil</div>
+        <h1 class="font-light uppercase">{{ category.name }}</h1>
+
+        <hr>
+
+        <div class="grid">
+            
+            <div class="row">
+
+                <div class="xs:col-12 xs:order-1 md:col-6 md:order-2">
+                    
+                    {% for article in category.article_set.all|slice:"0:3" %}
+
+                    <div class="card card-column">
+                        <a href="{% url 'article' slug=article.slug %}">
+                            <img class="card__thumbnail" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                        </a>
+                        <div class="card__body">
+                            <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                            <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+
+                <div class="xs:col-12 xs:order-2 md:col-3 md:order-1">
+
+                    {% for article in category.article_set.all|slice:"3:6" %}
+
+                        <div class="card card-column">
+                            <a href="{% url 'article' slug=article.slug %}">
+                                <img class="card__thumbnail" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                            </a>
+                            <div class="card__body">
+                                <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                                <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="xs:col-12 xs:order-3 md:col-3 md:order-3">
+
+                    {% for article in category.article_set.all|slice:"6:9" %}
+
+                        <div class="card card-column">
+                            <div class="card__body">
+                                <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                                <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>            
+
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="xs:col-12 md:col-9">
+
+                {% for article in category.article_set.all|slice:"9:" %}
+
+                    <div class="card card-row">
+                        <a href="{% url 'article' slug=article.slug %}">
+                            <img width="600px" src="{{ article.thumbnail.url }}" alt="{{ article.name }}">
+                        </a>  
+                        <div class="card__body">
+                            <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                            <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

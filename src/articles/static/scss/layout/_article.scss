@@ -1,0 +1,55 @@
+/* _article.scss */
+
+.article
+{
+    max-width: map-get($breakpoints, sm);
+    width: 100%;
+    
+    margin: 0 auto;
+    padding: 3 * $spacer 1 * $spacer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 130px;
+
+    h1, h2, h3, h4, h5, h6
+    {
+        text-align: center;
+    }
+
+    img
+    {
+        width: 150%;
+        max-width: 90vw;
+    }
+
+    img.main-img
+    {
+        width: 250%;
+        max-height: 75vh;
+        object-fit: cover;
+    }
+}
+
+
+.article .head
+{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 30px;
+
+    text-align: center;
+
+}
+
+.article .foot
+{
+    width: 100%;
+}

@@ -1,0 +1,58 @@
+/* _footer.scss */
+
+.footer
+{
+    margin-top: 5 * $spacer; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+    
+    padding: 4 * $spacer;
+
+    border-top: $light 1px solid;
+
+    & > *
+    {
+        flex: 1;
+    }
+
+    .networks
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 1.25 * $spacer;
+
+        padding: 1 * $spacer;
+
+        font-size: 1.05 * $body-font-size;
+    }
+
+    .license
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        padding: 1 * $spacer;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, md))
+{
+    .footer
+    {
+        flex-direction: row;
+    }
+}
+
+@media print
+{
+    .footer { display: none; }
+}

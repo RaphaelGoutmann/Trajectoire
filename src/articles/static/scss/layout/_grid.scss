@@ -1,0 +1,68 @@
+/* _grid.scss */
+
+.row
+{
+    display: grid;
+    grid-template-columns: repeat($grid-columns, 1fr);
+}
+
+@media screen and (min-width: map-get($breakpoints, xs))
+{
+    .row
+    {
+        grid-gap: 0.25 * $grid-gap;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, md)) 
+{
+    .row 
+    { 
+        grid-gap: 0.5 * $grid-gap; 
+    }    
+}
+
+@media screen and (min-width: map-get($breakpoints, lg)) 
+{
+    .row 
+    { 
+        grid-gap: 1 * $grid-gap; 
+    }    
+}
+
+
+@for $i from 1 through 12 
+{
+    .col-#{$i} 
+    { 
+        grid-column: span $i; 
+
+        & > * { margin-bottom: $col-gap; }
+    }
+    
+    .order-#{$i}
+    {
+        order: $i;
+    }
+} 
+
+@each $key, $value in $breakpoints
+{
+    @media screen and (min-width: $value)
+    {
+        @for $i from 1 through 12 
+        {
+            .#{$key}\:col-#{$i} 
+            { 
+                grid-column: span $i; 
+
+                & > * {  margin-bottom: $col-gap; }
+            }
+
+            .#{$key}\:order-#{$i}
+            {
+                order: $i;
+            }
+        } 
+    }
+}

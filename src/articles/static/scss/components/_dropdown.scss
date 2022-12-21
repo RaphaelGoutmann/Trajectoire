@@ -1,0 +1,44 @@
+/* _dropdown.scss */
+
+.dropdown
+{
+    position: relative;
+
+    .dropdown-toggle
+    {
+        cursor: pointer;
+    }
+
+    .dropdown-menu
+    {
+        position: absolute;
+        display: none;
+
+        padding: .75 * $spacer;
+
+        top: 100%;
+        left: 0;
+
+        background: white;
+
+        border: $light 1px solid;
+        border-radius: 3px;
+    }
+
+    .dropdown-menu .dropdown-item
+    {
+        padding: .5  * $spacer;
+    }
+}
+
+.dropdown.active
+{
+    .dropdown-menu
+    {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}

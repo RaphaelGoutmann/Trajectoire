@@ -1,0 +1,17 @@
+/* _badge.scss */
+
+.badge
+{
+    display: inline;
+    padding: .25 * $spacer;
+    color: $white;
+    border-radius: 3px;
+}
+
+@each $key, $value in $theme-colors
+{
+    .badge-#{$key}
+    {
+        background: $value;
+    }
+}
