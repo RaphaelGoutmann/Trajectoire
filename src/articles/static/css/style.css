@@ -72,6 +72,7 @@ h6
 ,
 .h6
  {
+  margin: 0;
   font-family: "Playfair Display", serif;
   font-weight: bold;
   line-height: 1.5em; }
@@ -696,7 +697,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 130px; }
+  gap: 80px; }
   .article h1, .article .h1, .article h2, .article .h2, .article h3, .article .h3, .article h4, .article .h4, .article h5, .article .h5, .article h6, .article .h6 {
     text-align: center; }
   .article img {
@@ -712,7 +713,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
   text-align: center; }
 
 .article .foot {
@@ -1474,7 +1475,6 @@ main {
   .card .card__title {
     font-weight: normal;
     font-size: 33px;
-    text-transform: capitalize;
     line-height: 1.5em; }
   .card .card__title a {
     border-bottom: 0.09rem solid #828282; }
