@@ -31,7 +31,8 @@
 
         <img class="main-img" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
 
-        {{ article.content | safe }}
+        {% load editorjs %}
+        {{ article.content | editorjs }}
 
         <div class="foot flex justify-flex-end items-center">
 

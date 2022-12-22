@@ -2,6 +2,9 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 
+# EditorJS
+from django_editorjs_fields import EditorJsJSONField 
+
 # Category Model
 
 class Category(models.Model):
@@ -38,7 +41,7 @@ class Article(models.Model):
     category         = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     last_updated     = models.DateField(blank=True, auto_now=True, null=True)
     resume           = models.CharField(max_length=255)
-    content          = models.TextField(blank=True)
+    content          = EditorJsJSONField(null=True, blank=True)
     thumbnail        = models.ImageField(upload_to="thumbnails", blank=True, null=True)
 
     def __str__(self):
