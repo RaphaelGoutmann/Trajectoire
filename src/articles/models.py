@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # EditorJS
 from django_editorjs_fields import EditorJsJSONField 
@@ -37,7 +38,7 @@ class Category(models.Model):
 class Article(models.Model):
     title            = models.CharField(max_length=255, unique=True)
     slug             = models.SlugField(max_length=255, unique=True, blank=True)
-    author           = models.CharField(max_length=255, blank=True)
+    author           = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     category         = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
     last_updated     = models.DateField(blank=True, auto_now=True, null=True)
     resume           = models.CharField(max_length=255)

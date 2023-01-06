@@ -37,7 +37,7 @@
         <div class="foot flex justify-flex-end items-center">
 
             <div class="small">
-                {{ article.author }} — {{ article.last_updated | date:'m/d/Y' }}
+                {{ article.author.first_name }} {{ article.author.last_name }} — {{ article.last_updated | date:'m/d/Y' }}
             </div>
             
         </div>
