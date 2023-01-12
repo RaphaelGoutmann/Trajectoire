@@ -4,24 +4,17 @@
 {% block title %}
     <title>{{ article.title }} - Trajectoire</title>
 
-    <!-- js -->
+    <!-- reading time -->
     <script src="{% static 'js/reading-time.js' %}" defer></script>
 
-    <!-- katex -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/katex.min.css" integrity="sha512-6VMVcy7XQNyarhVuiL50FzpgCFKsyTd6YO93aaQEyET+BNaWvj0IgKR86Bf6+AmWczxAcSnL+JGjo+iStgO1gQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/katex.min.js" integrity="sha512-b9IKj4LCNrtCPBhceRcoYOHWW/S2q9fpl7iAJlyxYpykRj1SKM7FE9+E0NEnJ8g8ni47LBr2GuX9qzg/xeuwzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.3/contrib/auto-render.min.js" integrity="sha512-iWiuBS5nt6r60fCz26Nd0Zqe0nbk1ZTIQbl3Kv7kYsX+yKMUFHzjaH2+AnM6vp2Xs+gNmaBAVWJjSmuPw76Efg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 {% endblock %}
-
 {% block content %}
 
     <article class="article" id="article">
 
         <div class="head">
 
-            <div class="">
+            <div>
                 <span id="reading-time"></span> minutes de lecture
             </div>
             <h1  class="title">{{ article.title }}</h1>

@@ -37,8 +37,8 @@
 
                 <li><a href="{% url 'contribute' %}">Contribuer</a></li>
 
-                {% if user.is_superuser %}
-                <li><a href="/admin">Interface d'administration</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="/admin">Administration</a></li>
                 {% endif %}
             </ul>
 
@@ -101,12 +101,8 @@
 
     </footer>
 
-    <!-- Js -->
+    <!-- js -->
     <script src="{% static 'js/main.js' %}"></script>
-
-    <!-- MediumZoom -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js" integrity="sha512-J3G1KdOKUuj92x5w2mV/7AmPckHbiTQdoPXd6qaeHemfcNOsuwFVQm851m+lLuJR33sGuz9TAzWtccXZOsFE0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>mediumZoom('article > img')</script>
 
 </body>
 </html>

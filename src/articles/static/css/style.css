@@ -1483,7 +1483,7 @@ main {
     padding: 0; }
 
 /* _button.scss */
-.btn, input[type=submit] {
+.btn {
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 12px;
@@ -1498,7 +1498,7 @@ main {
   background: #333333;
   cursor: pointer; }
 
-.btn.btn-inverted, input.btn-inverted[type=submit] {
+.btn.btn-inverted {
   color: #000;
   background: #fff; }
 
@@ -1508,42 +1508,6 @@ main {
   font-weight: normal;
   line-height: 63px;
   margin: 0; }
-
-/* _form.scss */
-form {
-  width: 100%; }
-  form * {
-    font-size: 1rem !important; }
-  form > * {
-    margin-bottom: 1.5rem; }
-
-label {
-  display: block;
-  width: 100%; }
-
-input[type=text],
-input[type=password],
-select,
-textarea,
-div[contenteditable] {
-  outline: none !important;
-  width: 100%;
-  padding: 1rem 0;
-  margin: 0.4rem 0;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px solid #333333; }
-
-textarea,
-div[contenteditable] {
-  min-height: 50vh; }
-  textarea > *,
-  div[contenteditable] > * {
-    margin-top: 0;
-    margin-bottom: 1rem; }
-
-input[type=submit] {
-  width: 100%; }
 
 /* _dropdown.scss */
 .dropdown {
