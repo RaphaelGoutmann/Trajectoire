@@ -33,6 +33,11 @@
 .big   { font-size: 1.05em !important }
 .giant { font-size: 1.5em  !important }
 
+.lead
+{
+    font-size: 1.10 * $body-font-size;
+}
+
 .float-left  { float: left  !important }
 .float-right { float: right !important }
 

@@ -4,25 +4,17 @@
 {% block title %}
     <title>{{ article.title }} - Trajectoire</title>
 
-    <!-- reading time -->
-    <script src="{% static 'js/reading-time.js' %}" defer></script>
-
 {% endblock %}
 {% block content %}
 
     <article class="article" id="article">
 
-        <div class="head">
+        <h1  class="title">{{ article.title }}</h1>
+        <div class="resume lead">{{ article.resume }}</div>
 
-            <div>
-                <span id="reading-time"></span> minutes de lecture
-            </div>
-            <h1  class="title">{{ article.title }}</h1>
-            <div class="resume">{{ article.resume }}</div>
-
-        </div>
-
-        <img class="main-img" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+        <figure class="main-image-container">
+            <img class="main-image" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+        </figure>
 
         {% load editorjs %}
         {{ article.content | editorjs }}

@@ -8,48 +8,57 @@
     margin: 0 auto;
     padding: 3 * $spacer 1 * $spacer;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
-    gap: 80px;
-
-    h1, h2, h3, h4, h5, h6
-    {
-        text-align: center;
-    }
-
-    img
-    {
-        width: 150%;
-        max-width: 90vw;
-    }
-
-    img.main-img
-    {
-        width: 250%;
-        max-height: 75vh;
-        object-fit: cover;
-    }
 }
 
-
-.article .head
+.main-image-container
 {
-    display: flex;
+    margin: 3rem 0;
 
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+}
 
-    gap: 40px;
+.main-image
+{
+    margin: 0 !important;
+    width: 200%;
+    max-width: 90vw;
+    max-height: 75vh;
+    
+    object-fit: cover;
+}
+
+.article .title
+{
+    font-size:   $title-font-size;    
+    font-weight: $title-font-weight;
+    line-height: $title-line-height;
+    margin: 0 0 40px;
 
     text-align: center;
+}
 
+.article .resume
+{
+    text-align: center;
 }
 
 .article .foot
 {
     width: 100%;
+}
+
+.article
+{    
+    blockquote 
+    { 
+        margin: 3rem 0; 
+    }
+
+    h1, h2, h3, h4, h5, h6, img, ol, ul, p
+    { 
+        margin: 2rem 0;
+    }
 }
