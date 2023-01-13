@@ -3,17 +3,18 @@
 .card
 {    
     position: relative; 
+
     text-align: left;
     
     display: flex;
     align-items: center;
     justify-content: center;
     
-    gap: $card-gap;
+    gap: 1 * $spacer;
 
-    transition-duration: .2s;
+    transition-duration: .1s;
 
-    &.card-row    { flex-direction: row; }
+    &.card-row    { flex-direction: row;    }
     &.card-column { flex-direction: column; }
 
     &.card-border { border: $light 1px solid; 
@@ -28,7 +29,7 @@
         justify-content: center;
         flex-direction: column;
         
-        gap: $card-body-gap;  
+        gap: 1 * $spacer;  
     }
 
     &.card-row .card__thumbnail
@@ -48,14 +49,11 @@
     {
         font-weight: normal;
         font-size: 1.5 * $body-font-size;
-
-        line-height: 1.5em;
-
     }
 
     .card__title a
     {
-        border-bottom: .09rem solid $gray;
+        @extend a.underlined;
     }
 
     .card__body > *

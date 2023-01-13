@@ -29,15 +29,11 @@
 
         padding: 1 * $spacer;
 
-        font-size: 1.05 * $body-font-size;
+        font-size: 1.05rem;
     }
 
     .license
     {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         text-align: center;
 
         padding: 1 * $spacer;

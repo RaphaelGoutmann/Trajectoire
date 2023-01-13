@@ -35,7 +35,7 @@
 
 .lead
 {
-    font-size: 1.10 * $body-font-size;
+    font-size: 1.10rem;
 }
 
 .float-left  { float: left  !important }
@@ -113,14 +113,7 @@
 .h5 { @extend h5; }    
 .h6 { @extend h6; }
 
-.h1-size { font-size: $h1-font-size; }
-.h2-size { font-size: $h2-font-size; }
-.h3-size { font-size: $h3-font-size; }
-.h4-size { font-size: $h4-font-size; }
-.h5-size { font-size: $h5-font-size; }
-.h6-size { font-size: $h6-font-size; }
-
 .is-hidden  { display: none !important; }
 
-.shadow { box-shadow: $shadow-color 1px 1px 20px; }
+.shadow { box-shadow: $light 1px 1px 20px; }
 .hover\:shadow:hover { @extend .shadow; }

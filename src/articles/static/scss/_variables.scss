@@ -2,7 +2,6 @@
 
 // fonts
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
 
 // colors
@@ -28,25 +27,15 @@ $body-bg: $white;
 
 $body-line-height: 32px;
 $body-font-size:   20px;
+
+$body-line-height-mobile: 28px;
+$body-font-size-mobile: 18px;
+
 $body-font-weight: normal;
 $body-letter-spacing: -0.003em;
-// $body-font-family: 'Source Sans Pro', sans-serif;
-$body-font-family: 'Source Serif Pro', sans-serif;
+$body-font-family: 'Source Serif Pro', serif;
 
-// blockquote
-
-$blockquote-fg: $gray;
-
-$blockquote-line-height: 44px;
-$blockquote-font-size: 32px;
-$blockquote-font-weight: 300;
-
-// title
-
-$title-font-family: 'Playfair Display', serif;
-$title-font-size: 54px;
-$title-font-weight: normal;
-$title-line-height: 63px;
+$heading-font-family: 'Playfair Display', sans-serif;
 
 // spacers
 
@@ -58,17 +47,9 @@ $spacers:
   1: $spacer * 1,
   2: $spacer * 2,
   3: $spacer * 3,
-  4: $spacer * 4
+  4: $spacer * 4,
+  5: $spacer * 5,
 );
-
-// h(i)
-
-$h1-font-size: 2.00rem;
-$h2-font-size: 1.50rem;
-$h3-font-size: 1.17rem;
-$h4-font-size: 1.00rem;
-$h5-font-size: 0.83rem;
-$h6-font-size: 0.67rem;
 
 // grid
 
@@ -87,31 +68,3 @@ $breakpoints:
   xl: 1200px,
   xxl: 1400px
 );
-
-// mark
-
-$mark: rgba(255, 255, 0, 0.25);
-
-// button
-
-$button-padding-left:   24px;
-$button-padding-right:  24px;
-$button-padding-top:    12px;
-$button-padding-bottom: 12px;
-
-$button-font-size: 0.9 * $body-font-size;
-$button-line-height: 18px;
-$button-font-weight: lighter;
-
-// card
-
-$card-gap: 30px;
-$card-body-gap: 20px;
-
-// shadow 
-
-$shadow-color: #e6e6e6;
-
-// code
-
-$code-font-family: monospace;

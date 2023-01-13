@@ -2,17 +2,15 @@
 
 .btn
 {
-    padding-left:   $button-padding-left;
-    padding-right:  $button-padding-right;
-    padding-top:    $button-padding-top;
-    padding-bottom: $button-padding-bottom;
+    padding-left:   1.2em;
+    padding-right:  1.2em;
+    padding-top:    0.6em;
+    padding-bottom: 0.6em;
 
     border: 1px solid $dark;
     border-radius: 0;
 
-    font-size: $button-font-size;
-    line-height: $button-line-height;
-    font-weight: $button-font-weight;
+    font-size: 1rem;
     
     text-align: center;
 
@@ -20,10 +18,17 @@
     background: $dark;
     
     cursor: pointer;
+
+    transition-duration: .1s;
 }
 
 .btn.btn-inverted
 {
     color: $black;
     background: $white;  
+}
+
+.btn:hover
+{
+    @extend .btn-inverted
 }

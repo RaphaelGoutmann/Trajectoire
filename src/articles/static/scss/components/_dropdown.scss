@@ -4,15 +4,19 @@
 {
     position: relative;
 
-    .dropdown-toggle
+    .dropdown__toggle
     {
         cursor: pointer;
     }
 
-    .dropdown-menu
+    .dropdown__menu
     {
         position: absolute;
         display: none;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
 
         padding: .75 * $spacer;
 
@@ -23,9 +27,11 @@
 
         border: $light 1px solid;
         border-radius: 3px;
+
+        list-style: none;
     }
 
-    .dropdown-menu .dropdown-item
+    .dropdown__menu .dropdown__menu__item
     {
         padding: .5  * $spacer;
     }
@@ -33,12 +39,8 @@
 
 .dropdown.active
 {
-    .dropdown-menu
+    .dropdown__menu
     {
         display: flex;
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
     }
 }

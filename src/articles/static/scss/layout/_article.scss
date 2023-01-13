@@ -2,18 +2,16 @@
 
 .article
 {
-    max-width: map-get($breakpoints, sm);
+    max-width: map-get($breakpoints, md);
     width: 100%;
     
     margin: 0 auto;
-    padding: 3 * $spacer 1 * $spacer;
-
-
+    padding: 2 * $spacer 1 * $spacer;
 }
 
 .main-image-container
 {
-    margin: 3rem 0;
+    margin: 3 * $spacer 0;
 
     display: flex;
     justify-content: center;
@@ -23,6 +21,7 @@
 .main-image
 {
     margin: 0 !important;
+
     width: 200%;
     max-width: 90vw;
     max-height: 75vh;
@@ -32,10 +31,10 @@
 
 .article .title
 {
-    font-size:   $title-font-size;    
-    font-weight: $title-font-weight;
-    line-height: $title-line-height;
-    margin: 0 0 40px;
+    font-size:   2.7rem; 
+    font-weight: normal;
+    line-height: 1.6em;
+    margin: 0 0 2 * $spacer;
 
     text-align: center;
 }
@@ -54,11 +53,17 @@
 {    
     blockquote 
     { 
-        margin: 3rem 0; 
+        margin: 3 * $spacer 0; 
     }
 
     h1, h2, h3, h4, h5, h6, img, ol, ul, p
     { 
-        margin: 2rem 0;
+        margin: 2 * $spacer 0;
     }
+
+    a
+    {
+        @extend a.underlined
+    }
+
 }
