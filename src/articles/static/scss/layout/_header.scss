@@ -48,11 +48,13 @@
     position: relative;
 
     width: 100%;
-    height: 125px;
+    height: 100px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    border-bottom: black 1px solid;
 
     padding: 0 7%;
 
@@ -65,6 +67,52 @@
 
     .nav
     {
+        display: none;
+    }
+
+    .nav ul
+    {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+        gap: 2 * $spacer
+    }
+
+    .nav ul li
+    {
+        
+    }
+
+    .nav ul li a
+    {
+        transition-duration: .1s;
+    }
+
+    .nav ul li a:hover
+    {
+        // color: $gray;
+        @extend a.underlined;
+    }
+
+    .nav ul li a:focus
+    {
+        @extend a.underlined;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, lg)) 
+    {
+        .nav
+        {
+            display: block;    
+        }
+    }
+
+    .responsive-nav
+    {
+        border: black 1px solid;
         z-index: 1000;
         position: absolute;
 
@@ -83,29 +131,29 @@
         padding: 2 * $spacer 3.5 * $spacer;
     }
 
-    .nav ul
+    .responsive-nav ul
     {
         list-style: none;
         padding: 0;
     }
 
-    .nav ul li
+    .responsive-nav ul li
     {
         margin: 1.5 * $spacer 0;
     }
 
-    .nav ul li a
+    .responsive-nav ul li a
     {
         color: inherit;
         transition: color .1s;
     }
 
-    .nav ul li a:hover
+    .responsive-nav ul li a:hover
     {
         color: $gray;
     }
 
-    .active & .nav
+    .active & .responsive-nav
     {
         left: 0;
     }
@@ -124,6 +172,9 @@
     .icons .search-close
     {
         cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .icons .search,
@@ -181,7 +232,7 @@ main
 
     .active &
     {
-        filter: brightness(50%)
+        filter: brightness(50%);
     }
 }
 

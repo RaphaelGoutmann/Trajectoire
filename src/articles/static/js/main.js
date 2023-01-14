@@ -1,7 +1,7 @@
 // responsive menu
 
 const toggleNav = document.querySelector('#toggle-nav')
-const nav = document.querySelector('.nav')
+const responsiveNav = document.querySelector('.reponsive-nav')
 
 const main = document.querySelector('main')
 
@@ -12,7 +12,11 @@ toggleNav.addEventListener('click', (e) =>
 
 main.addEventListener('click', (e) =>
 {
-    document.body.classList.remove('active')
+    if(document.body.classList.contains('active'))
+    {
+        e.preventDefault()
+        document.body.classList.remove('active')
+    }
 })
 
 // search

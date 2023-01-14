@@ -1,32 +1,32 @@
 /* _article.scss */
 
+.main-img
+{
+    max-height: 65vh; 
+}
+
 .article
 {
-    max-width: map-get($breakpoints, md);
+    max-width: map-get($breakpoints, lg);
     width: 100%;
     
     margin: 0 auto;
-    padding: 2 * $spacer 1 * $spacer;
+    padding: 3 * $spacer 2 * $spacer;
+
+    border: $black 1px solid;
+
+    position: relative;
+    background: inherit;
+    top: -10 * $spacer;
+
 }
 
-.main-image-container
+@media screen and (min-width: map-get($breakpoints, md)) 
 {
-    margin: 3 * $spacer 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-image
-{
-    margin: 0 !important;
-
-    width: 200%;
-    max-width: 90vw;
-    max-height: 75vh;
-    
-    object-fit: cover;
+    .article
+    {
+        padding: 3 * $spacer 5 * $spacer;
+    }    
 }
 
 .article .title
@@ -38,6 +38,19 @@
 
     text-align: center;
 }
+
+.article .tag
+{
+    width: max-content;
+    
+    margin: .25rem auto 1.5rem;
+
+    padding: 0.6em 1.2em ;
+    
+    border: 1px solid $dark;
+    border-radius: 0;
+}
+
 
 .article .resume
 {
@@ -51,7 +64,7 @@
 
 .article
 {    
-    blockquote 
+    blockquote, table, img
     { 
         margin: 3 * $spacer 0; 
     }
@@ -64,6 +77,20 @@
     a
     {
         @extend a.underlined
+    }
+
+
+    .delimiter::before
+    {
+
+        content: '···';
+        letter-spacing: .5em;
+        font-size: 1.5rem;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
 }

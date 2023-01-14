@@ -11,7 +11,6 @@ from django_editorjs_fields import EditorJsJSONField
 class Category(models.Model):
     name        = models.CharField(max_length=255, unique=True)
     description = models.CharField(max_length=255)
-    thumbnail   = models.ImageField(upload_to="categories", blank=True, null=True)
     slug        = models.SlugField(max_length=255, unique=True, blank=True)
 
     def __str__(self):

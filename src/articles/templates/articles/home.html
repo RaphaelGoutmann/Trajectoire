@@ -4,15 +4,24 @@
     <title>Accueil - Trajectoire</title>
 {% endblock %}
 
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+            <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
+
+    <div class="banner">
+        <a class="underlined" style="border-color:white;" href="{% url 'contribute' %}">En savoir plus sur le projet 💡</a>
+    </div>
 
     <div class="container-xxl">
         
-        <div class="small text-light uppercase">Accueil</div>
-        <h1 class="font-light uppercase">Trajectoire</h1>
-
-        <hr>
-
         <div class="grid">
             
             <div class="row">

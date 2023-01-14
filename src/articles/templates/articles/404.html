@@ -5,6 +5,16 @@
     <title>404 - Trajectoire</title>
 {% endblock %}
 
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+            <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
 
     Erreur 404, <a href="{% url 'home' %}">retourner à la page d'accueil</a>

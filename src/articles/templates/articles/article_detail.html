@@ -7,14 +7,15 @@
 {% endblock %}
 {% block content %}
 
+    <img class="object-fit-cover w-100 max-h-65" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
+
     <article class="article" id="article">
 
+        <div class="tag">{{ article.category }}</div>
         <h1  class="title">{{ article.title }}</h1>
-        <div class="resume lead">{{ article.resume }}</div>
+        <div class="text-center lead">{{ article.resume }}</div>
 
-        <figure class="main-image-container">
-            <img class="main-image" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
-        </figure>
+        <div class="delimiter my-2"></div>
 
         {% load editorjs %}
         {{ article.content | editorjs }}

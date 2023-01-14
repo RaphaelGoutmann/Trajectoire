@@ -47,7 +47,7 @@ hr
     height: 1px;
 
     margin: 3 * $spacer 0;
-    background: $light;
+    background: $black;
 }
 
 h1, h2, h3, h4, h5, h6
@@ -180,4 +180,42 @@ code
     background: $light;
     padding: .1 * $spacer .25 * $spacer;
     font-family: monospace;
+}
+
+table 
+{
+
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    border: black 1px solid;
+    text-align: center;
+
+}
+
+table thead tr 
+{
+    background: $dark;
+    color: $white;
+}
+
+table th,
+table td 
+{
+    padding: 0.6 * $spacer 0.75 * $spacer;
+}
+
+table tbody tr 
+{
+    border-bottom: black 1px solid;
+}
+
+table tbody tr:nth-of-type(even) 
+{
+    background-color: $light;
+}
+
+table tbody tr:last-of-type 
+{
+    border-bottom: black 1px solid;
 }

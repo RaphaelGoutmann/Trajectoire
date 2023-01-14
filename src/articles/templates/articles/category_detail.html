@@ -4,15 +4,28 @@
     <title>{{ category.name }} - Trajectoire</title>
 {% endblock %}
 
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for nav_category in categories %}
+        
+            {% if nav_category == category %}
+            <li><a class="underlined" href="{% url 'category' slug=nav_category.slug %}">{{ nav_category.name }}</a></li>
+            {% else %}
+            <li><a href="{% url 'category' slug=nav_category.slug %}">{{ nav_category.name }}</a></li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
+
+<div class="banner">{{ category.description }}</div>
 
     <div class="container-xxl">
         
-        <div class="small text-light uppercase">Accueil</div>
-        <h1 class="font-light uppercase">{{ category.name }}</h1>
-
-        <hr>
-
         <div class="grid">
             
             <div class="row">
