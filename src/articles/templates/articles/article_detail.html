@@ -4,7 +4,26 @@
 {% block title %}
     <title>{{ article.title }} - Trajectoire</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+
 {% endblock %}
+
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+        
+            {% if category == article.category %}
+            <li><a class="underlined" href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+            {% else %}
+            <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
 
     <img class="object-fit-cover w-100 max-h-65" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
@@ -29,5 +48,45 @@
         </div>
 
     </article>
+
+    <hr style="margin: -1px 0;">
+
+    <div class="p-3">
+
+        <div class="text-center flex justify-center items-center  gap-1">
+
+            <button class="btn btn-inverted"><a href="www.twitter.com">Twitter</a></button>
+            <button class="btn btn-inverted"><a href="www.instagram.com">Instagram</a></button>
+            <button class="btn btn-inverted"><a href="www.facebook.com">Facebook</a></button>
+
+        </div>
+
+    </div>
+    
+    <hr style="margin: -1px 0;">
+    
+    <div class="container-xl" style="margin-top: -1px;">
+
+        <h1 class="mb-3 text-center">Prochains articles</h1>
+
+        <div class="flex flex-wrap gap-4">
+            {% for recommandation in recommandations %}
+
+            <div class="card card-column flex-1">
+                <a href="{% url 'article' slug=recommandation.slug %}">
+                    <img class="card__thumbnail" src="{{ recommandation.thumbnail.url }}" alt="{{ recommandation.name }}">
+                </a>
+                <div class="card__body">
+                    <h3 class="card__title"><a href="{% url 'article' slug=recommandation.slug %}">{{ recommandation.title }}</a></h3>
+                    <p class="card__text">{{ recommandation.resume | truncatewords:20 }}</p>
+                    <p  class="card__meta">{{ recommandation.last_updated }} — {{ recommandation.author.first_name }} {{ recommandation.author.last_name }} </p>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
 
 {% endblock %}

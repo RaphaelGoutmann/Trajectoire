@@ -9,9 +9,9 @@ from django_editorjs_fields import EditorJsJSONField
 # Category Model
 
 class Category(models.Model):
-    name        = models.CharField(max_length=255, unique=True)
-    description = models.CharField(max_length=255)
-    slug        = models.SlugField(max_length=255, unique=True, blank=True)
+    name        = models.CharField(max_length=255, unique=True, verbose_name='Nom')
+    description = models.CharField(max_length=255, verbose_name='Description')
+    slug        = models.SlugField(max_length=255, unique=True, blank=True, verbose_name='Slug')
 
     def __str__(self):
         return self.name
@@ -35,14 +35,15 @@ class Category(models.Model):
 # Article Model 
 
 class Article(models.Model):
-    title            = models.CharField(max_length=255, unique=True)
-    slug             = models.SlugField(max_length=255, unique=True, blank=True)
-    author           = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    category         = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
-    last_updated     = models.DateField(blank=True, auto_now=True, null=True)
-    resume           = models.CharField(max_length=255)
-    content          = EditorJsJSONField(null=True, blank=True)
-    thumbnail        = models.ImageField(upload_to="thumbnails", blank=True, null=True)
+    title            = models.CharField(max_length=255, unique=True, verbose_name='Titre')
+    slug             = models.SlugField(max_length=255, unique=True, blank=True, verbose_name='Slug')
+    author           = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Auteur')
+    category         = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='Catégorie')
+    last_updated     = models.DateField(blank=True, auto_now=True, null=True, verbose_name='Dernière modification')
+    date             = models.DateField(blank=True, auto_now_add=True, null=True, verbose_name='Date de publication')
+    resume           = models.CharField(max_length=255, verbose_name='Résumé')
+    content          = EditorJsJSONField(null=True, blank=True, verbose_name='Contenu')
+    thumbnail        = models.ImageField(upload_to="thumbnails", blank=True, null=True, verbose_name='Miniature')
 
     def __str__(self):
         return self.title

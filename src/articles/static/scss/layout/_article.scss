@@ -10,14 +10,13 @@
     max-width: map-get($breakpoints, lg);
     width: 100%;
     
-    margin: 0 auto;
+    margin: -10 * $spacer auto 0;
     padding: 3 * $spacer 2 * $spacer;
 
     border: $black 1px solid;
 
     position: relative;
     background: inherit;
-    top: -10 * $spacer;
 
 }
 
@@ -79,10 +78,8 @@
         @extend a.underlined
     }
 
-
     .delimiter::before
     {
-
         content: '···';
         letter-spacing: .5em;
         font-size: 1.5rem;

@@ -5,11 +5,21 @@
     <title>Recherche - Trajectoire</title>
 {% endblock %}
 
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+        <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
 
     <div class="container-md">
 
-        <h1>{{ results|length }} Résultats</h1>
+        <h1>{{ results|length }} Résultats pour '{{ query }}'</h1>
 
         <hr>
 
@@ -18,7 +28,7 @@
                 <div class="card__body">
                     <h3 class="card__title"><a href="{% url 'article' slug=result.slug %}">{{ result.title }}</a></h3>
                     <p  class="card__text">{{ result.resume | truncatewords:30 }}</p>
-                    <p  class="text-light">{{ result.last_updated }}</p>
+                    <p  class="card__meta">{{ result.last_updated }}</p>
                 </div>
             </div>
 

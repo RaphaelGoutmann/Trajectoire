@@ -7,13 +7,13 @@ from trajectoire import settings
 from .views import *
 
 urlpatterns = [
-    path('', HomeView.as_view(), name="home"),
+    path('', HomeView, name="home"),
     path('contribute', ContributeView, name="contribute"),
 
-    path('search', SearchView.as_view(), name="search"),
+    path('search', SearchView, name="search"),
 
-    path('category/<str:slug>', CategoryDetailView.as_view(), name="category"),
-    path('article/<str:slug>', ArticleDetailView.as_view(), name="article"),
+    path('category/<str:slug>', CategoryDetailView, name="category"),
+    path('article/<str:slug>', ArticleDetailView, name="article"),
 
     path('editorjs/', include('django_editorjs_fields.urls')),
 
