@@ -4,6 +4,7 @@
 {% block title %}
     <title>{{ article.title }} - Trajectoire</title>
 
+    <script defer src="{% static 'js/go-top.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
 
 {% endblock %}
@@ -25,6 +26,8 @@
 {% endblock %}
 
 {% block content %}
+
+    <div class="go-top">↑</div>
 
     <img class="object-fit-cover w-100 max-h-65" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
 
@@ -55,9 +58,9 @@
 
         <div class="text-center flex justify-center items-center  gap-1">
 
-            <button class="btn btn-inverted"><a href="www.twitter.com">Twitter</a></button>
-            <button class="btn btn-inverted"><a href="www.instagram.com">Instagram</a></button>
+            <button class="btn btn-inverted"><a href="https://twitter.com">Instagram</a></button>
             <button class="btn btn-inverted"><a href="www.facebook.com">Facebook</a></button>
+            <button class="btn btn-inverted"><a href="www.facebook.com">Copier le lien</a></button>
 
         </div>
 

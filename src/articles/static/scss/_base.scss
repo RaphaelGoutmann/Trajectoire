@@ -7,6 +7,8 @@
 
 html, body
 {
+    scroll-behavior: smooth;
+
     font-size:   $body-font-size-mobile;
     line-height: $body-line-height-mobile;
 

@@ -41,6 +41,7 @@ table {
   box-sizing: border-box; }
 
 html, body {
+  scroll-behavior: smooth;
   font-size: 18px;
   line-height: 28px;
   font-family: "Source Serif Pro", serif;
@@ -1739,5 +1740,25 @@ main {
 
 .block > * {
   flex: 1; }
+
+.go-top {
+  transition-duration: .3s;
+  opacity: 0;
+  width: 2rem;
+  height: 2rem;
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border: black 1px solid;
+  background: white;
+  cursor: pointer;
+  z-index: 9999; }
+
+@media screen and (min-width: 1200px) {
+  .go-top {
+    display: flex;
+    justify-content: center;
+    align-items: center; } }
 
 /*# sourceMappingURL=style.css.map */
