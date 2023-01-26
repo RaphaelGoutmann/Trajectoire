@@ -10,19 +10,7 @@
 {% endblock %}
 
 {% block nav %}
-<nav class="nav">
-    <ul>
-        {% for category in categories %}
-        
-            {% if category == article.category %}
-            <li><a class="underlined" href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
-            {% else %}
-            <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
-            {% endif %}
-
-        {% endfor %}
-    </ul>
-</nav>
+<!-- empty -->
 {% endblock %}
 
 {% block content %}

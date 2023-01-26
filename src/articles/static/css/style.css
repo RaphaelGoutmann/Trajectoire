@@ -660,7 +660,6 @@ table tbody tr:last-of-type {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: black 1px solid;
   padding: 0 7%;
   font-size: 0.95rem; }
   .header .bars {
