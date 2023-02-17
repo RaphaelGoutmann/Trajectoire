@@ -2,15 +2,15 @@
 
 .footer
 {
-    margin-top: 5 * $spacer; 
     
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
     flex-direction: column;
     
-    padding: 4 * $spacer;
+    margin-top: 3 * $spacer; 
+    padding: 1 * $spacer;
 
     border-top: $black 1px solid;
 
@@ -38,6 +38,15 @@
 
         padding: 1 * $spacer;
     }
+}
+
+@media screen and (min-width: map-get($breakpoints, sm)) 
+{
+    .footer
+    {
+        margin-top: 5 * $spacer; 
+        padding: 4 * $spacer;
+    }    
 }
 
 @media screen and (min-width: map-get($breakpoints, md))

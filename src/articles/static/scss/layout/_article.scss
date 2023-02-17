@@ -13,11 +13,19 @@
     width: 100%;
     
     margin: 0 auto;
-    padding: 2 * $spacer ;
+    padding: 1 * $spacer;
 
     position: relative;
     background: inherit;
 
+}
+
+@media screen and (min-width: map-get($breakpoints, sm)) 
+{
+    .article
+    {
+        padding: 2 * $spacer;
+    }    
 }
 
 @media screen and (min-width: map-get($breakpoints, md)) 
@@ -30,7 +38,7 @@
 
 .article .title
 {
-    font-size:   2.7rem; 
+    font-size:   2rem; 
     font-weight: normal;
     line-height: 1.3;
     margin: 0 0 2 * $spacer;
@@ -38,22 +46,13 @@
     text-align: center;
 }
 
-.article .tag
+@media screen and (min-width: map-get($breakpoints, sm)) 
 {
-    width: max-content;
     
-    margin: .25rem auto 1.5rem;
-
-    padding: 0.6em 1.2em ;
-    
-    border: 1px solid $dark;
-    border-radius: 0;
-}
-
-
-.article .resume
-{
-    text-align: center;
+    .article .title 
+    {
+        font-size:   2.7rem; 
+    }
 }
 
 .article .foot

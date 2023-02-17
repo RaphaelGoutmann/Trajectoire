@@ -4,7 +4,6 @@
 {% block title %}
     <title>{{ article.title }} - Trajectoire</title>
 
-    <script defer src="{% static 'js/go-top.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
 
 {% endblock %}
@@ -15,13 +14,10 @@
 
 {% block content %}
 
-    <div class="go-top">↑</div>
-
     <img class="main-img" src="{{ article.thumbnail.url }}" alt="{{ article.title }}">
 
     <article class="article" id="article">
 
-        <!-- <div class="tag">{{ article.category }}</div> -->
         <h1  class="title">{{ article.title }}</h1>
         <div class="text-center lead">{{ article.resume }}</div>
 
