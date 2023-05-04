@@ -26,7 +26,7 @@
         {% load editorjs %}
         {{ article.content | editorjs }}
 
-        <p>
+        <p data-do-not-print>
             <strong>Lire aussi : </strong>
             {% for recommandation in recommandations %}
                 <a href="{% url 'article' slug=recommandation.slug %}">{{ recommandation.title }}</a>

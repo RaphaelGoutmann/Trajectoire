@@ -10,11 +10,4 @@
 
         margin: 0 auto;
     }
-
-    @media screen and (min-width: map-get($breakpoints, md)) 
-    {
-        .container-#{$key}
-        {
-        }
-    }
 }

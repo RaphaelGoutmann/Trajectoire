@@ -1,5 +1,6 @@
 from django.views.generic import ListView
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 
 from .models import *
 
@@ -22,13 +23,12 @@ def ContributeView(request):
 
 
 def SearchView(request):
-    articles = Article.objects.all()
     results = None
     query = ''
 
     if request.method == 'GET':
         query = request.GET.get('query')
         if query:
-            results = articles.filter(title__icontains=query)
-
+            results = Article.objects.filter( Q(title__icontains=query) | Q(content__icontains=query) )
+            
     return render(request, 'articles/search.html', {'results': results, 'query': query})

@@ -1,0 +1,12 @@
+.banner
+{
+    width: 100%;
+    background: $black;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2 * $spacer 20%;
+    margin: 0;
+}

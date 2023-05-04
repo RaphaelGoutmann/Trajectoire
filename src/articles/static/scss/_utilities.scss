@@ -126,3 +126,11 @@
 
 .shadow { box-shadow: $light 1px 1px 20px; }
 .hover\:shadow:hover { @extend .shadow; }
+
+@media print
+{
+    [data-do-not-print]
+    {
+        display: none;
+    }
+}
