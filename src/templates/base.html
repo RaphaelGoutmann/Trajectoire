@@ -38,7 +38,7 @@
                 <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
                 {% endfor %}
 
-                <li><a href="{% url 'contribute' %}">Contribuer</a></li>
+                <li><a href="{% url 'contribute' %}">À propos</a></li>
 
                 {% if user.is_authenticated %}
                 <hr>
