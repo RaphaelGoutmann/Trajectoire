@@ -29,8 +29,8 @@ class Category(models.Model):
     class Meta:
         ordering = ['-id']
 
-        verbose_name = "Categorie"
-        verbose_name_plural = "Categories"
+        verbose_name = "Catégorie"
+        verbose_name_plural = "Catégories"
 
 # Article Model 
 
@@ -63,3 +63,17 @@ class Article(models.Model):
 
         verbose_name = "Article"
         verbose_name_plural = "Articles"
+
+# Comment Model 
+
+class Comment(models.Model):
+    article    = models.ForeignKey(Article, on_delete=models.CASCADE, related_name='comments', verbose_name="Article")
+    author     = models.CharField(max_length=255, verbose_name="Auteur")
+    content    = models.TextField(verbose_name="Contenu")
+    date       = models.DateTimeField(auto_now_add=True, verbose_name="Date")
+
+    class Meta:
+        ordering = ["-date"]
+
+        verbose_name = "Commentaire"
+        verbose_name_plural = "Commentaires"

@@ -1,0 +1,70 @@
+/* _comment.scss */
+
+// comment
+
+.comments
+{}
+
+.comment
+{
+    width: 100%;
+}
+
+.comment > .comment__author,
+.comment > .comment__date,
+.comment > .comment_content
+{
+    font-size: inherit;
+}
+
+.comment .comment__author 
+{
+    margin: 0.5 * $spacer 0;
+    font-weight: bold;
+}
+
+.comment .comment__date
+{
+    margin: 0 0 1 * $spacer;
+    color: $gray;
+}
+
+.comment .comment__content
+{
+    margin: 1 * $spacer 0;
+}
+
+
+// comment-form
+
+.comment-form
+{
+    width: 100%;
+}
+
+.comment-form .comment-form__group
+{
+    border: $black 1px solid;
+    margin-bottom: 1*$spacer;
+}
+
+.comment-form input,
+.comment-form textarea
+{
+    display: block;
+    
+    width: 100%;
+    height: auto;
+    
+    border: 0;
+    outline: none;
+
+    font-size: inherit;
+    font-family: inherit;
+    padding: 1 * $spacer;
+}
+
+.comment-form textarea
+{
+    resize: none;
+}

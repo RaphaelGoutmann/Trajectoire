@@ -22,9 +22,13 @@
         <div class="text-center lead">{{ article.resume }}</div>
 
         <div class="delimiter my-2"></div>
-
+        
         {% load editorjs %}
         {{ article.content | editorjs }}
+
+        <div class="foot flex justify-flex-end items-center">
+            {{ article.author.first_name }} {{ article.author.last_name }} — {{ article.last_updated | date:'m/d/Y' }}
+        </div>
 
         <p data-do-not-print>
             <strong>Lire aussi : </strong>
@@ -36,13 +40,32 @@
             {% endfor %}
         </p>
 
-        <div class="foot flex justify-flex-end items-center">
+        <hr>
 
-            <div>
-                {{ article.author.first_name }} {{ article.author.last_name }} — {{ article.last_updated | date:'m/d/Y' }}
+        <div class="comments" data-do-not-print>
+        {% for comment in comments %}
+
+            <div class="comment">
+                <h3 class="comment__author">{{ comment.author }}</h3>
+                <p class="comment__date">{{ comment.date }}</p>
+                <p class="comment__content">{{ comment.content }}</p>
             </div>
-            
+
+            <hr>
+        {% endfor %}
         </div>
+
+        <form class="comment-form" method="post" data-do-not-print>
+            {% csrf_token %}
+            {% for field in comment_form %}
+            <div class="comment-form__group">
+                {{ field }}
+            </div>
+            {% endfor %}
+            <div class="flex justify-flex-end items-center">
+                <button type="submit" class="btn btn-primary btn-lg">Publier</button>
+            </div>
+        </form>
 
     </article>
 
