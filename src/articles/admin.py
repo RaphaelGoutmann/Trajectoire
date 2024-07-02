@@ -4,7 +4,7 @@ from .models import Category, Article, Comment
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("name",)
-    fields = ["name", "description", "thumbnail"]
+    fields = ["name", "description"]
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ("title",
