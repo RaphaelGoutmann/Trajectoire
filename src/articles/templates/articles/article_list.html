@@ -1,20 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>{{ category.name }} - Trajectoire</title>
+    <title>{{ title }} - Trajectoire</title>
 {% endblock %}
 
 {% block nav %}
 <nav class="nav">
     <ul>
         {% for nav_category in categories %}
-        
-            {% if nav_category == category %}
-            <li><a class="underlined" href="{% url 'category' slug=nav_category.slug %}">{{ nav_category.name }}</a></li>
-            {% else %}
             <li><a href="{% url 'category' slug=nav_category.slug %}">{{ nav_category.name }}</a></li>
-            {% endif %}
-
         {% endfor %}
     </ul>
 </nav>
@@ -22,7 +16,7 @@
 
 {% block content %}
 
-<div class="banner">{{ category.description }}</div>
+<div class="banner">{{ description }}</div>
 
     <div class="container-xxl">
         
@@ -32,7 +26,7 @@
 
                 <div class="xs:col-12 xs:order-1 md:col-6 md:order-2">
                     
-                    {% for article in category.article_set.all|slice:"0:3" %}
+                    {% for article in articles|slice:"0:3" %}
 
                     <div class="card card-column">
                         <a href="{% url 'article' slug=article.slug %}">
@@ -51,7 +45,7 @@
 
                 <div class="xs:col-12 xs:order-2 md:col-3 md:order-1">
 
-                    {% for article in category.article_set.all|slice:"3:6" %}
+                    {% for article in articles|slice:"3:6" %}
 
                         <div class="card card-column">
                             <a href="{% url 'article' slug=article.slug %}">
@@ -69,7 +63,7 @@
 
                 <div class="xs:col-12 xs:order-3 md:col-3 md:order-3">
 
-                    {% for article in category.article_set.all|slice:"6:9" %}
+                    {% for article in articles|slice:"6:9" %}
 
                         <div class="card card-column">
                             <div class="card__body">
@@ -92,7 +86,7 @@
 
             <div class="xs:col-12 md:col-9">
 
-                {% for article in category.article_set.all|slice:"9:" %}
+                {% for article in articles|slice:"9:" %}
 
                     <div class="card card-row">
                         <a href="{% url 'article' slug=article.slug %}">

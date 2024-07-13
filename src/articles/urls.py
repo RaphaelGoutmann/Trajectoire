@@ -14,6 +14,10 @@ urlpatterns = [
 
     path('category/<str:slug>', CategoryDetailView, name="category"),
     path('article/<str:slug>', ArticleDetailView, name="article"),
+    path('most-popular', MostPopularView, name="most-popular"),
+
+    path('author/<str:slug>', AuthorDetailView, name="author"),
+    path('authors/', AuthorListView, name="authors"),
 
     path('editorjs/', include('django_editorjs_fields.urls')),
 

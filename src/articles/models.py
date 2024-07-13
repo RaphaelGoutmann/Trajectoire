@@ -44,6 +44,7 @@ class Article(models.Model):
     resume           = models.CharField(null=True,  blank=True, max_length=255, verbose_name='Résumé')
     content          = EditorJsJSONField(null=True, blank=True, verbose_name='Contenu')
     thumbnail        = models.ImageField(upload_to="thumbnails", blank=True, null=True, verbose_name='Miniature')
+    views            = models.IntegerField(default=0, null=True, blank=True)
 
     def __str__(self):
         return self.title

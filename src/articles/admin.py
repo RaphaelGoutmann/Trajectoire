@@ -10,7 +10,8 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ("title",
                     "author",
                     "category",
-                    "last_updated")
+                    "last_updated",
+                    "views")
 
     fields = ["title", "author", "category", "resume", "thumbnail", "content"]
 

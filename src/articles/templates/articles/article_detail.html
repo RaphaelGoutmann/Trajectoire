@@ -27,7 +27,7 @@
         {{ article.content | editorjs }}
 
         <div class="foot flex justify-flex-end items-center">
-            {{ article.author.first_name }} {{ article.author.last_name }} — {{ article.last_updated | date:'m/d/Y' }}
+            {{ article.author.first_name }} {{ article.author.last_name }} — {{ article.last_updated | date:'m/d/Y' }} — {{ article.views }} vues
         </div>
 
         <p data-do-not-print>

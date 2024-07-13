@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{ author.first_name }} {{ author.last_name }} - Trajectoire</title>
+{% endblock %}
+
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+        <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-md">
+
+    <h1>{{ author.first_name }} {{ author.last_name }} ({{ author.article_set.all|length }})</h1>
+
+    <hr>
+
+    {% for article in author.article_set.all %}
+        <div class="card card-row">
+            <div class="card__body">
+                <h3 class="card__title"><a href="{% url 'article' slug=article.slug %}">{{ article.title }}</a></h3>
+                <p  class="card__text">{{ article.resume | truncatewords:30 }}</p>
+                <p  class="card__meta">{{ article.last_updated }}</p>
+            </div>
+        </div>
+
+        <hr>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

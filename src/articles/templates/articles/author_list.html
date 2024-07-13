@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Nos auteurs - Trajectoire</title>
+{% endblock %}
+
+{% block nav %}
+<nav class="nav">
+    <ul>
+        {% for category in categories %}
+        <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-md">
+
+    <h1>Nos auteurs</h1>
+
+    <hr>
+
+    {% for author in author_list %}
+        <div class="card card-row">
+            <div class="card__body">
+                <h3 class="card__title"><a href="{% url 'author' slug=author.username %}">{{ author.first_name }} {{ author.last_name }} </a></h3>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
