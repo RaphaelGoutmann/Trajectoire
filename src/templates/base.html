@@ -34,6 +34,8 @@
 
                 <li><a href="{% url 'home' %}">Accueil</a></li>
 
+                <li><a href="{% url 'map' %}">Carte</a></li>
+
                 {% for category in categories %}
                 <li><a href="{% url 'category' slug=category.slug %}">{{ category.name }}</a></li>
                 {% endfor %}

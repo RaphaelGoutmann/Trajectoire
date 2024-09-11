@@ -1773,4 +1773,11 @@ main {
 .comment-form textarea {
   resize: none; }
 
+.area {
+  stroke: white;
+  stroke-width: .5px; }
+
+.area:hover {
+  fill: gray; }
+
 /*# sourceMappingURL=style.css.map */
